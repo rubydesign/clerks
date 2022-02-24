@@ -41,6 +41,7 @@ gem 'uglifier', '>= 1.3.0'
 gem "autoprefixer-rails"
 gem "puma"
 gem "neat"
+gem 'rack-attack'
 
 #gem 'db_fixtures_dump'  , git: "https://github.com/rubydesign/db_fixtures_dump" #backup
 
@@ -48,7 +49,6 @@ gem "neat"
 group :production do
   gem 'mini_racer'
   gem "pg"
-  gem 'rack-attack'
 end
 
 group :development do

@@ -26,5 +26,6 @@ alias be="bundle exec "
 alias ber="bundle exec rspec"
 alias f="find . -name "
 
-alias test_all="NCPU=8 ruby test/test_all.rb"
+alias test_all="NCPU=16 ruby test/test_all.rb"
 alias sync="systemctl --user enable resilio-sync;systemctl --user start resilio-sync"
+alias wifi="cd /home/torsten/firmwares/rtw89;make clean;make -j 17; sudo make install; sudo modprobe -v rtw89pci"

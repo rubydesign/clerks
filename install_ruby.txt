@@ -1,0 +1,17 @@
+# not needed on a "copy"
+
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+~/.rbenv/bin/rbenv init
+mkdir -p "$(~/.rbenv/bin/rbenv root)"/plugins
+git clone https://github.com/rbenv/ruby-build.git "$(~/.rbenv/bin/rbenv root)"/plugins/ruby-build
+sudo yum install -y openssl-devel readline-devel
+~/.rbenv/bin/rbenv install 2.6.7
+~/.rbenv/bin/rbenv global 2.6.7
+
+cd rubydesign
+gem install bundler
+bundle
+bundle exec rails db:create
+heroku pg:backups:download
+pg_restore --verbose --clean --no-acl --no-owner -U postgres -d devel latest.dump

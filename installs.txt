@@ -1,62 +1,36 @@
+# basic installs
+sudo dnf install -y emacs-nox tilix  pinta wireshark
+sudo dnf install -y dnf-plugins-core sqlite-devel
+sudo yum group install "Development Tools"
+sudo dnf install -y redhat-rpm-config gcc-c++ libpq-devel
+sudo yum install -y gcc zlib-devel
+sudo dnf install -y postgresql-server postgresql
+sudo dnf install -y emacs-nox
 
-sudo dnf install emacs-nox
+sudo dnf install -y qbittorrent gnome-tweaks
+# extension caffeine , cpu power manager, auto move windows
+sudo dnf install -y exfat-utils fuse-exfat qemu binutils-arm-linux-gnu
+sudo dnf install -y syncthing
+
+curl https://cli-assets.heroku.com/install.sh | sh
+
 git config --global user.email "torsten@rubydesign.fi"
 git config --global user.name "Torsten"
 
 sudo rpm --import https://packagecloud.io/AtomEditor/atom/gpgkey
 sudo sh -c 'echo -e "[Atom]\nname=Atom Editor\nbaseurl=https://packagecloud.io/AtomEditor/atom/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/AtomEditor/atom/gpgkey" > /etc/yum.repos.d/atom.repo'
-sudo dnf install atom
-sudo dnf install tilix  pinta
+sudo dnf install -y atom
 
-sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf install vlc
-
-sudo dnf install dnf-plugins-core
-
-sudo dnf install sqlite-devel
-
-sudo dnf install redhat-rpm-config
-sudo dnf install gcc-c++
-sudo dnf install libpq-devel
-sudo yum install -y gcc zlib-devel
-sudo yum group install "Development Tools"
-sudo dnf install postgresql-server postgresql
+sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install -y vlc
 
 sudo systemctl enable postgresql
 sudo postgresql-setup initdb
-sudo dnf install emacs-nox
 sudo emacs /var/lib/pgsql/data/pg_hba.conf
 # change peer to trust (last) towards bottom of file
 # local   all             postgres                                trust
 sudo service postgresql restart
 
-sudo dnf install qbittorrent
-sudo dnf install gnome-tweaks
-# extension caffeine , cpu power manager, auto move windows
-sudo dnf install exfat-utils
-sudo dnf install fuse-exfat
-sudo dnf install qemu
-sudo dnf install binutils-arm-linux-gnu
-
-sudo dnf install syncthing
 systemctl --user enable --now syncthing.service
 systemctl --user start --now syncthing.service
-
-git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-~/.rbenv/bin/rbenv init
-mkdir -p "$(~/.rbenv/bin/rbenv root)"/plugins
-git clone https://github.com/rbenv/ruby-build.git "$(~/.rbenv/bin/rbenv root)"/plugins/ruby-build
-sudo yum install -y openssl-devel readline-devel
-~/.rbenv/bin/rbenv install 2.6.7
-~/.rbenv/bin/rbenv global 2.6.7
-
-curl https://cli-assets.heroku.com/install.sh | sh
-
-cd rubydesign
-gem install bundler
-bundle
-bundle exec rails db:create
-heroku pg:backups:download
-pg_restore --verbose --clean --no-acl --no-owner -U postgres -d devel latest.dump
