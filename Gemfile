@@ -1,4 +1,4 @@
-ruby "3.0.3"
+ruby "2.7.5"
 
 source 'https://rubygems.org'
 
@@ -16,7 +16,7 @@ gem "best_in_place" , '~> 3.0'
 gem "rabl" , '~> 0.13.1'
 gem 'high_voltage'
 gem 'kaminari' , '~> 1.1'
-gem 'bootstrap'
+gem 'bootstrap' , "~> 4.0 "
 gem 'simple_form'
 gem 'rails-i18n' , '~> 4.0'
 gem "bcrypt"
@@ -25,7 +25,8 @@ gem "chunky_png" , "~> 1.3"
 gem "prawn" ,  "~> 2.0"
 gem "reference_number"
 gem 'pry-rails'
-
+gem 'e2mmap'
+gem "sorted_set"
 gem 'rails_same_site_cookie'
 
 group :lomake do
@@ -42,6 +43,7 @@ gem "autoprefixer-rails"
 gem "puma"
 gem "neat"
 gem 'rack-attack'
+gem 'binding_of_caller'
 
 #gem 'db_fixtures_dump'  , git: "https://github.com/rubydesign/db_fixtures_dump" #backup
 
@@ -53,7 +55,6 @@ end
 
 group :development do
   gem 'better_errors'
-  gem 'binding_of_caller'
   gem "i18n-tasks"
   gem 'listen', '>= 3.0.5', '< 3.2'
 end
