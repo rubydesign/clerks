@@ -5,7 +5,7 @@ sudo yum group install "Development Tools"
 sudo dnf install -y redhat-rpm-config gcc-c++ libpq-devel
 sudo yum install -y gcc zlib-devel
 sudo dnf install -y postgresql-server postgresql
-sudo dnf install -y emacs-nox
+sudo dnf install -y emacs-nox evolution
 
 sudo dnf install -y qbittorrent gnome-tweaks
 # extension caffeine , cpu power manager, auto move windows
