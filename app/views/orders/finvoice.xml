@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<?xml-stylesheet type="text/xsl" href="Finvoice.xsl"?>
+<Finvoice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="3.0" xsi:noNamespaceSchemaLocation="Finvoice3.0.xsd">
+  <MessageTransmissionDetails>
+    <MessageSenderDetails>
+      <FromIdentifier SchemeID="0037">003712345678</FromIdentifier>
+      <FromIntermediator>003721291126</FromIntermediator>
+    </MessageSenderDetails>
+    <MessageReceiverDetails>
+      <ToIdentifier SchemeID="0037">003712345678</ToIdentifier>
+      <ToIntermediator>003721291126</ToIntermediator>
+    </MessageReceiverDetails>
+    <MessageDetails>
+      <MessageIdentifier>FINVINV-8650</MessageIdentifier>
+      <MessageTimeStamp>2019-01-21T14:09:21+02:00</MessageTimeStamp>
+      <ImplementationCode>XX</ImplementationCode>
+    </MessageDetails>
+  </MessageTransmissionDetails>
+  <SellerPartyDetails>
+    <SellerPartyIdentifier>2380478-1</SellerPartyIdentifier>
+    <SellerOrganisationName>Lightning Raisa &amp; Torsten Oy</SellerOrganisationName>
+    <SellerOrganisationTradingName>Auringosta Itään, Kuusta Länteen Tukku - Farfalla</SellerOrganisationTradingName>
+    <SellerOrganisationTaxCode>FI23804781</SellerOrganisationTaxCode>
+    <SellerPostalAddressDetails>
+      <SellerStreetName>Högbenintie 30</SellerStreetName>
+      <SellerTownName>Meltola</SellerTownName>
+      <SellerPostCodeIdentifier>10350</SellerPostCodeIdentifier>
+      <CountryCode>FI</CountryCode>
+      <CountryName>Suomi</CountryName>
+    </SellerPostalAddressDetails>
+  </SellerPartyDetails>
+  <SellerInformationDetails>
+    <SellerHomeTownName>Meltola</SellerHomeTownName>
+    <SellerPhoneNumber>040 146 1222</SellerPhoneNumber>
+    <SellerCommonEmailaddressIdentifier>info-at-farfalla.fi</SellerCommonEmailaddressIdentifier>
+    <SellerWebaddressIdentifier>www.farfalla.fi</SellerWebaddressIdentifier>
+    <SellerAccountDetails>
+      <SellerAccountID IdentificationSchemeName="IBAN">FI1017453000132474</SellerAccountID>
+      <SellerBic IdentificationSchemeName="BIC">NDEAFIHH</SellerBic>
+    </SellerAccountDetails>
+  </SellerInformationDetails>
+  <InvoiceRecipientCommunicationDetails>
+    <InvoiceRecipientEmailaddressIdentifier>InvoiceRecipientEmailaddressIdentifier</InvoiceRecipientEmailaddressIdentifier>
+  </InvoiceRecipientCommunicationDetails>
+  <BuyerPartyDetails>
+    <BuyerPartyIdentifier>1234567-8</BuyerPartyIdentifier>
+    <BuyerOrganisationName>BuyerOrganisationName</BuyerOrganisationName>
+    <BuyerOrganisationName>BuyerOrganisationName</BuyerOrganisationName>
+    <BuyerOrganisationTradingName>BuyerOrganisationTradingName</BuyerOrganisationTradingName>
+    <BuyerOrganisationTaxCode>FI12345678</BuyerOrganisationTaxCode>
+    <BuyerPostalAddressDetails>
+      <BuyerStreetName>BuyerStreetName</BuyerStreetName>
+      <BuyerTownName>BuyerTownName</BuyerTownName>
+      <BuyerPostCodeIdentifier>BuyerPostCodeIdentifier</BuyerPostCodeIdentifier>
+      <CountryCode>FI</CountryCode>
+      <CountryName>CountryName</CountryName>
+    </BuyerPostalAddressDetails>
+  </BuyerPartyDetails>
+  <BuyerCommunicationDetails>
+    <BuyerEmailaddressIdentifier>BuyerEmailaddressIdentifier</BuyerEmailaddressIdentifier>
+  </BuyerCommunicationDetails>
+  <InvoiceDetails>
+    <InvoiceTypeCode CodeListAgencyIdentifier="SPY">INV01</InvoiceTypeCode>
+    <InvoiceTypeCodeUN>380</InvoiceTypeCodeUN>
+    <InvoiceTypeText>LASKU</InvoiceTypeText>
+    <OriginCode>Original</OriginCode>
+    <InvoiceNumber>9190100001</InvoiceNumber>
+    <InvoiceDate Format="CCYYMMDD">20190121</InvoiceDate>
+    <OrderIdentifier>OrderIdentifier</OrderIdentifier>
+    <RowsTotalVatExcludedAmount AmountCurrencyIdentifier="EUR">900,00</RowsTotalVatExcludedAmount>
+    <InvoiceTotalVatExcludedAmount AmountCurrencyIdentifier="EUR">900,00</InvoiceTotalVatExcludedAmount>
+    <InvoiceTotalVatAmount AmountCurrencyIdentifier="EUR">216,00</InvoiceTotalVatAmount>
+    <InvoiceTotalVatIncludedAmount AmountCurrencyIdentifier="EUR">1116,00</InvoiceTotalVatIncludedAmount>
+    <VatSpecificationDetails>
+      <VatBaseAmount AmountCurrencyIdentifier="EUR">900,00</VatBaseAmount>
+      <VatRatePercent>24</VatRatePercent>
+      <VatCode>S</VatCode>
+      <VatRateAmount AmountCurrencyIdentifier="EUR">216,00</VatRateAmount>
+      <VatFreeText>VatFreeText</VatFreeText>
+      <VatFreeText>VatFreeText</VatFreeText>
+    </VatSpecificationDetails>
+    <InvoiceFreeText>InvoiceFreeText</InvoiceFreeText>
+    <InvoiceFreeText>InvoiceFreeText</InvoiceFreeText>
+    <InvoiceFreeText>InvoiceFreeText</InvoiceFreeText>
+    <PaymentTermsDetails>
+      <PaymentTermsFreeText>14 vrk netto</PaymentTermsFreeText>
+      <FreeText>
+        <Value>Value</Value>
+      </FreeText>
+      <InvoiceDueDate Format="CCYYMMDD">20190128</InvoiceDueDate>
+    </PaymentTermsDetails>
+    <TenderReference>TenderReference</TenderReference>
+  </InvoiceDetails>
+  <VirtualBankBarcode>448195030000000100011160000000000000091901000011190128</VirtualBankBarcode>
+  <InvoiceRow>
+    <ArticleIdentifier>Tuotenumero</ArticleIdentifier>
+    <ArticleName>ArticleName</ArticleName>
+    <InvoicedQuantity QuantityUnitCode="KPL" QuantityUnitCodeUN="C62">1</InvoicedQuantity>
+    <UnitPriceNetAmount AmountCurrencyIdentifier="EUR" QuantityUnitCodeUN="C62">1000,00</UnitPriceNetAmount>
+    <RowVatRatePercent>24</RowVatRatePercent>
+    <RowVatCode>S</RowVatCode>
+    <RowVatAmount AmountCurrencyIdentifier="EUR">216,00</RowVatAmount>
+    <RowVatExcludedAmount AmountCurrencyIdentifier="EUR">900,00</RowVatExcludedAmount>
+    <RowAmount AmountCurrencyIdentifier="EUR">1116,00</RowAmount>
+  </InvoiceRow>
+  <EpiDetails>
+    <EpiIdentificationDetails>
+      <EpiDate Format="CCYYMMDD">20190121</EpiDate>
+      <EpiReference/>
+    </EpiIdentificationDetails>
+    <EpiPartyDetails>
+      <EpiBfiPartyDetails>
+        <EpiBfiIdentifier IdentificationSchemeName="BIC">NDEAFIHH</EpiBfiIdentifier>
+        <EpiBfiName>Nordea</EpiBfiName>
+      </EpiBfiPartyDetails>
+      <EpiBeneficiaryPartyDetails>
+        <EpiNameAddressDetails>EpiNameAddressDetails</EpiNameAddressDetails>
+        <EpiBei>123456789</EpiBei>
+        <EpiAccountID IdentificationSchemeName="IBAN">FI1017453000132474</EpiAccountID>
+      </EpiBeneficiaryPartyDetails>
+    </EpiPartyDetails>
+    <EpiPaymentInstructionDetails>
+      <EpiRemittanceInfoIdentifier IdentificationSchemeName="SPY">91901000011</EpiRemittanceInfoIdentifier>
+      <EpiInstructedAmount AmountCurrencyIdentifier="EUR">1106,00</EpiInstructedAmount>
+      <EpiCharge ChargeOption="SHA">SHA</EpiCharge>
+      <EpiDateOptionDate Format="CCYYMMDD">20190128</EpiDateOptionDate>
+      <EpiPaymentMeansCode>58</EpiPaymentMeansCode>
+    </EpiPaymentInstructionDetails>
+  </EpiDetails>
+</Finvoice>

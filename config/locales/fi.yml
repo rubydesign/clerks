@@ -245,3 +245,7 @@ fi:
   height: Korkeä
   length: Pitkä
   width: Leveä
+  xml:
+    header: Xml
+    print: Tulosta Xml
+    thanks:

@@ -31,4 +31,7 @@ module Print
     render "invoice"
   end
 
+  def xml
+    render "finvoice.xml" , content_type: "application/xml" , layout: false
+  end
 end

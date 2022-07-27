@@ -432,7 +432,7 @@ DEPENDENCIES
   valid_email (= 0.0.10)
 
 RUBY VERSION
-   ruby 2.7.5p203
+   ruby 2.7.6p219
 
 BUNDLED WITH
    2.3.9
