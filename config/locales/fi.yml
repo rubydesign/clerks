@@ -233,6 +233,8 @@ fi:
   password: Salasana
   phone: Puhelin
   street: Jakeluosoite
+  vat_id: Alv nummero
+  cid: Verkkoosoite
   price: Hinta sis alv / alv 0
   house: Talo
   houses: Talot

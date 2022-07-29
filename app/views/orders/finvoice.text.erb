@@ -8,8 +8,7 @@
     </MessageSenderDetails>
     <MessageReceiverDetails>
       <ToIdentifier SchemeID="0037">
-        <%= "INTO clerks" %>
-        003712345678
+        <%= @order.cid %>
       </ToIdentifier>
       <ToIntermediator>003721291126</ToIntermediator>
     </MessageReceiverDetails>
@@ -50,7 +49,7 @@
     </InvoiceRecipientEmailaddressIdentifier>
   </InvoiceRecipientCommunicationDetails>
   <BuyerPartyDetails>
-    <BuyerPartyIdentifier>1234567-8</BuyerPartyIdentifier>
+    <BuyerPartyIdentifier>1234567-8 ??</BuyerPartyIdentifier>
     <BuyerOrganisationName>
       <%= @order.name %>
     </BuyerOrganisationName>
@@ -58,7 +57,7 @@
       <%= @order.name %>
     </BuyerOrganisationTradingName>
     <BuyerOrganisationTaxCode>
-      FI12345678
+      <%= @order.vat_id %>
     </BuyerOrganisationTaxCode>
     <BuyerPostalAddressDetails>
       <BuyerStreetName>

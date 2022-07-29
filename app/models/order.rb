@@ -3,7 +3,7 @@ require "reference_number"
 class Order < ActiveRecord::Base
   has_one :basket , :as => :kori , :autosave => true , :dependent => :destroy
 
-  store :address, accessors: [ :name , :street , :city , :phone ] #, coder: JSON
+  store :address, accessors: [ :name , :street , :city , :phone , :vat_id , :cid] #, coder: JSON
 
   validates :ordered_on,  :presence => true
 
