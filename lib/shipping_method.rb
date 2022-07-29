@@ -24,6 +24,7 @@ class ShippingMethod
     @@methods = {}
     config = RubyClerks.config(:shipping)
     config.each do |key , method|
+      puts "key #{key} meth #{method}"
       begin
         clas_name = method[:class]
         clas = clas_name.constantize

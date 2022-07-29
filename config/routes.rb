@@ -59,7 +59,7 @@ Rails.application.routes.draw do
       get :reminder
       get :rakennus
       get :ecoframe
-      get :xml
+      get :finvoice
     end
   end
 

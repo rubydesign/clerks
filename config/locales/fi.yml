@@ -245,7 +245,7 @@ fi:
   height: Korkeä
   length: Pitkä
   width: Leveä
-  xml:
+  finvoice:
     header: Xml
     print: Tulosta Xml
     thanks:

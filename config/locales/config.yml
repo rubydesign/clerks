@@ -55,4 +55,4 @@ config:
     10480 Antskog <br>
     info@farfalla.fi <br>
     puh 040 146 1222"
-  print_styles: "slip invoice reminder rakennus ecoframe xml"
+  print_styles: "slip invoice reminder rakennus ecoframe finvoice"
