@@ -7,16 +7,12 @@
       <FromIntermediator>003721291126</FromIntermediator>
     </MessageSenderDetails>
     <MessageReceiverDetails>
-      <ToIdentifier SchemeID="0037">
-        <%= @order.cid %>
-      </ToIdentifier>
+      <ToIdentifier SchemeID="0037"><%= @order.cid %></ToIdentifier>
       <ToIntermediator>003721291126</ToIntermediator>
     </MessageReceiverDetails>
     <MessageDetails>
-      <MessageIdentifier>FINVINV-8650</MessageIdentifier>
-      <MessageTimeStamp>
-        <%= Time.now.strftime("%Y%m%d") %>
-      </MessageTimeStamp>
+      <MessageIdentifier><%= @order.number %></MessageIdentifier>
+      <MessageTimeStamp><%= Time.now.strftime("%y-%m-%dT%H:%M:%S%z") %></MessageTimeStamp>
       <ImplementationCode>XX</ImplementationCode>
     </MessageDetails>
   </MessageTransmissionDetails>
@@ -44,75 +40,46 @@
     </SellerAccountDetails>
   </SellerInformationDetails>
   <InvoiceRecipientCommunicationDetails>
-    <InvoiceRecipientEmailaddressIdentifier>
-      <%= @order.email %>
-    </InvoiceRecipientEmailaddressIdentifier>
+    <InvoiceRecipientEmailaddressIdentifier><%= @order.email %></InvoiceRecipientEmailaddressIdentifier>
   </InvoiceRecipientCommunicationDetails>
   <BuyerPartyDetails>
-    <BuyerPartyIdentifier>1234567-8 ??</BuyerPartyIdentifier>
-    <BuyerOrganisationName>
-      <%= @order.name %>
-    </BuyerOrganisationName>
-    <BuyerOrganisationTradingName>
-      <%= @order.name %>
-    </BuyerOrganisationTradingName>
-    <BuyerOrganisationTaxCode>
-      <%= @order.vat_id %>
-    </BuyerOrganisationTaxCode>
+    <BuyerPartyIdentifier><%=@order.vat_id %></BuyerPartyIdentifier>
+    <BuyerOrganisationName><%= @order.name %></BuyerOrganisationName>
+    <BuyerOrganisationTradingName><%=@order.name %></BuyerOrganisationTradingName>
+    <BuyerOrganisationTaxCode><%=@order.vat_id %></BuyerOrganisationTaxCode>
     <BuyerPostalAddressDetails>
-      <BuyerStreetName>
-        <%= @order.street %>
-      </BuyerStreetName>
-      <BuyerTownName>
-        <%= @order.city.split.last %>
-      </BuyerTownName>
-      <BuyerPostCodeIdentifier>
-        <%= @order.city.split.first %>
-      </BuyerPostCodeIdentifier>
+      <BuyerStreetName><%= @order.street %></BuyerStreetName>
+      <BuyerTownName><%= @order.city.split.last %></BuyerTownName>
+      <BuyerPostCodeIdentifier><%=@order.city.split.first %></BuyerPostCodeIdentifier>
       <CountryCode>FI</CountryCode>
       <CountryName>Finland</CountryName>
     </BuyerPostalAddressDetails>
   </BuyerPartyDetails>
   <BuyerCommunicationDetails>
-    <BuyerEmailaddressIdentifier>
-      <%= @order.email %>
-    </BuyerEmailaddressIdentifier>
+    <BuyerEmailaddressIdentifier><%= @order.email %></BuyerEmailaddressIdentifier>
   </BuyerCommunicationDetails>
   <InvoiceDetails>
     <InvoiceTypeCode CodeListAgencyIdentifier="SPY">INV01</InvoiceTypeCode>
     <InvoiceTypeCodeUN>380</InvoiceTypeCodeUN>
     <InvoiceTypeText>LASKU</InvoiceTypeText>
     <OriginCode>Original</OriginCode>
-    <InvoiceNumber>
-      <%= @order.number %>
-    </InvoiceNumber>
-    <InvoiceDate Format="CCYYMMDD">
-      <%= @order.ordered_on.strftime("%Y%m%d") %>
-    </InvoiceDate>
-    <OrderIdentifier>
-      <%= @order.order_number %>
-    </OrderIdentifier>
-    <InvoiceTotalVatExcludedAmount AmountCurrencyIdentifier="EUR">
-      <%= number_with_comma(@order.total_price - @order.total_tax) %>
-    </InvoiceTotalVatExcludedAmount>
-    <InvoiceTotalVatAmount AmountCurrencyIdentifier="EUR">
-      <%= number_with_comma @order.total_tax %>
-    </InvoiceTotalVatAmount>
-    <InvoiceTotalVatIncludedAmount AmountCurrencyIdentifier="EUR">
-      <%= number_with_comma @order.total_price %>
-    </InvoiceTotalVatIncludedAmount>
+    <InvoiceNumber><%= @order.number %></InvoiceNumber>
+    <InvoiceDate Format="CCYYMMDD"><%= @order.ordered_on.strftime("%Y%m%d")%></InvoiceDate>
+    <OrderIdentifier><%= @order.order_number %></OrderIdentifier>
+    <InvoiceTotalVatExcludedAmount AmountCurrencyIdentifier="EUR"><%=
+      number_with_comma(@order.total_price - @order.total_tax) %></InvoiceTotalVatExcludedAmount>
+    <InvoiceTotalVatAmount AmountCurrencyIdentifier="EUR"><%=
+      number_with_comma @order.total_tax %></InvoiceTotalVatAmount>
+    <InvoiceTotalVatIncludedAmount AmountCurrencyIdentifier="EUR"><%=
+      number_with_comma @order.total_price %></InvoiceTotalVatIncludedAmount>
     <VatSpecificationDetails>
-      <VatBaseAmount AmountCurrencyIdentifier="EUR">
-        <%= number_with_comma(@order.total_price - @order.total_tax) %>
-      </VatBaseAmount>
+      <VatBaseAmount AmountCurrencyIdentifier="EUR"><%=
+        number_with_comma(@order.total_price - @order.total_tax) %></VatBaseAmount>
       <% taxes = @order.taxes ; raise "More than 24%" if taxes.length > 1 %>
-      <VatRatePercent>
-        <%= number_with_comma taxes.keys.first %>
-      </VatRatePercent>
+      <VatRatePercent><%= number_with_comma taxes.keys.first %></VatRatePercent>
       <VatCode>S</VatCode>
-      <VatRateAmount AmountCurrencyIdentifier="EUR">
-        <%= number_with_comma taxes.values.first %>
-      </VatRateAmount>
+      <VatRateAmount AmountCurrencyIdentifier="EUR"><%=
+        number_with_comma taxes.values.first %></VatRateAmount>
       <VatFreeText>VatFreeText</VatFreeText>
     </VatSpecificationDetails>
     <InvoiceFreeText>InvoiceFreeText</InvoiceFreeText>
@@ -121,41 +88,28 @@
       <FreeText>
         <Value>Value</Value>
       </FreeText>
-      <InvoiceDueDate Format="CCYYMMDD">
-        <%= (@order.ordered_on + 2.weeks).strftime("%Y%m%d") %>
-      </InvoiceDueDate>
+      <InvoiceDueDate Format="CCYYMMDD"><%=
+        (@order.ordered_on + 2.weeks).strftime("%Y%m%d") %></InvoiceDueDate>
     </PaymentTermsDetails>
     <TenderReference>TenderReference</TenderReference>
   </InvoiceDetails>
-  <VirtualBankBarcode>448195030000000100011160000000000000091901000011190128</VirtualBankBarcode>
   <% @order.basket.items.each do |item| %>
-    <InvoiceRow>
-      <ArticleIdentifier>
-        <%= item.product.ean %>
-      </ArticleIdentifier>
-      <ArticleName>
-        <%= item.product.name %>
-      </ArticleName>
-      <InvoicedQuantity QuantityUnitCode="KPL" QuantityUnitCodeUN="C62">
-        <%= item.quantity %>
-      </InvoicedQuantity>
-      <UnitPriceNetAmount AmountCurrencyIdentifier="EUR" QuantityUnitCodeUN="C62">
-        <%= item.price %>
-      </UnitPriceNetAmount>
-      <RowVatRatePercent>
-        <%= item.tax %>
-      </RowVatRatePercent>
-      <RowVatCode>S</RowVatCode>
-      <RowVatAmount AmountCurrencyIdentifier="EUR">
-        <%= item.tax_amount %>
-      </RowVatAmount>
-      <RowVatExcludedAmount AmountCurrencyIdentifier="EUR">
-        <%= item.total - item.tax_amount %>
-      </RowVatExcludedAmount>
-      <RowAmount AmountCurrencyIdentifier="EUR">
-        <%= item.total %>
-      </RowAmount>
-    </InvoiceRow>
+  <InvoiceRow>
+    <ArticleIdentifier><%= item.product.ean %></ArticleIdentifier>
+    <ArticleName><%= item.product.name %></ArticleName>
+    <InvoicedQuantity QuantityUnitCode="KPL" QuantityUnitCodeUN="C62"><%=
+      item.quantity %></InvoicedQuantity>
+    <UnitPriceNetAmount AmountCurrencyIdentifier="EUR" QuantityUnitCodeUN="C62"><%=
+      number_with_comma item.price %></UnitPriceNetAmount>
+    <RowVatRatePercent><%= number_with_comma item.tax %></RowVatRatePercent>
+    <RowVatCode>S</RowVatCode>
+    <RowVatAmount AmountCurrencyIdentifier="EUR"><%=
+      number_with_comma item.tax_amount %></RowVatAmount>
+    <RowVatExcludedAmount AmountCurrencyIdentifier="EUR"><%=
+      number_with_comma(item.total - item.tax_amount) %></RowVatExcludedAmount>
+    <RowAmount AmountCurrencyIdentifier="EUR"><%=
+      number_with_comma item.total %></RowAmount>
+  </InvoiceRow>
   <% end %>
   <EpiDetails>
     <EpiIdentificationDetails>
@@ -168,18 +122,17 @@
         <EpiBfiName>Nordea</EpiBfiName>
       </EpiBfiPartyDetails>
       <EpiBeneficiaryPartyDetails>
-        <EpiNameAddressDetails>EpiNameAddressDetails</EpiNameAddressDetails>
+        <EpiNameAddressDetails>Farfalla.fi </EpiNameAddressDetails>
         <EpiBei>123456789</EpiBei>
         <EpiAccountID IdentificationSchemeName="IBAN">FI1017453000132474</EpiAccountID>
       </EpiBeneficiaryPartyDetails>
     </EpiPartyDetails>
     <EpiPaymentInstructionDetails>
       <EpiRemittanceInfoIdentifier IdentificationSchemeName="SPY">91901000011</EpiRemittanceInfoIdentifier>
-      <EpiInstructedAmount AmountCurrencyIdentifier="EUR">
-        <%= number_with_comma @order.total_price %>
-      </EpiInstructedAmount>
+      <EpiInstructedAmount AmountCurrencyIdentifier="EUR"><%=
+        number_with_comma @order.total_price %></EpiInstructedAmount>
       <EpiCharge ChargeOption="SHA">SHA</EpiCharge>
-      <EpiDateOptionDate Format="CCYYMMDD">20190128</EpiDateOptionDate>
+      <EpiDateOptionDate Format="CCYYMMDD">Time.now.strftime("%y%m%d")</EpiDateOptionDate>
       <EpiPaymentMeansCode>58</EpiPaymentMeansCode>
     </EpiPaymentInstructionDetails>
   </EpiDetails>
