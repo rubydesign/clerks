@@ -163,6 +163,7 @@
     .order_show_back
       - print_styles.each do |style|
         = link_to t("#{style}.header") , print_path(style), :class => "btn btn-primary btn-sm"
+      = link_to t("finvoice.header") , finvoice_order_path(@order , :num => @order.number), :class => "btn btn-primary btn-sm"
 
   %br
   %br

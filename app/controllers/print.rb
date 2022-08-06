@@ -33,8 +33,8 @@ module Print
 
   def finvoice
     load_order
-    render_to_string "finvoice.text" 
-#            content_type: "application/text" ,
-#            layout: false
+    render "finvoice.text" ,
+            content_type: "application/text" ,
+            layout: false
   end
 end

@@ -59,7 +59,7 @@ Rails.application.routes.draw do
       get :reminder
       get :rakennus
       get :ecoframe
-      get :finvoice
+      get "finvoice_:num" , action: :finvoice , as: :finvoice
     end
   end
 
