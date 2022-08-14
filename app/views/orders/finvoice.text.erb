@@ -12,7 +12,7 @@
     </MessageReceiverDetails>
     <MessageDetails>
       <MessageIdentifier><%= @order.number %></MessageIdentifier>
-      <MessageTimeStamp><%= Time.now.strftime("%y-%m-%dT%H:%M:%S%z") %></MessageTimeStamp>
+      <MessageTimeStamp><%= Time.now.strftime("%Y-%m-%dT%H:%M:%S%:z") %></MessageTimeStamp>
       <ImplementationCode>XX</ImplementationCode>
     </MessageDetails>
   </MessageTransmissionDetails>
@@ -113,7 +113,7 @@
   <% end %>
   <EpiDetails>
     <EpiIdentificationDetails>
-      <EpiDate Format="CCYYMMDD">20190121</EpiDate>
+      <EpiDate Format="CCYYMMDD"><%= @order.ordered_on.strftime("%Y%m%d")%></EpiDate>
       <EpiReference/>
     </EpiIdentificationDetails>
     <EpiPartyDetails>
@@ -132,7 +132,7 @@
       <EpiInstructedAmount AmountCurrencyIdentifier="EUR"><%=
         number_with_comma @order.total_price %></EpiInstructedAmount>
       <EpiCharge ChargeOption="SHA">SHA</EpiCharge>
-      <EpiDateOptionDate Format="CCYYMMDD">Time.now.strftime("%y%m%d")</EpiDateOptionDate>
+      <EpiDateOptionDate Format="CCYYMMDD"><%= Time.now.strftime("%Y%m%d")%></EpiDateOptionDate>
       <EpiPaymentMeansCode>58</EpiPaymentMeansCode>
     </EpiPaymentInstructionDetails>
   </EpiDetails>
