@@ -3,12 +3,12 @@
 <Finvoice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="3.0" xsi:noNamespaceSchemaLocation="Finvoice3.0.xsd">
   <MessageTransmissionDetails>
     <MessageSenderDetails>
-      <FromIdentifier SchemeID="0037">003712345678</FromIdentifier>
-      <FromIntermediator>003721291126</FromIntermediator>
+      <FromIdentifier SchemeID="0037">003723804781</FromIdentifier>
+      <FromIntermediator>MAVENTA</FromIntermediator>
     </MessageSenderDetails>
     <MessageReceiverDetails>
-      <ToIdentifier SchemeID="0037"><%= @order.cid %></ToIdentifier>
-      <ToIntermediator>003721291126</ToIntermediator>
+      <ToIdentifier SchemeID="0037">0037<%=@order.vat_id %></ToIdentifier>
+      <ToIntermediator>0037<%=@order.cid%></ToIntermediator>
     </MessageReceiverDetails>
     <MessageDetails>
       <MessageIdentifier><%= @order.number %></MessageIdentifier>
@@ -80,9 +80,9 @@
       <VatCode>S</VatCode>
       <VatRateAmount AmountCurrencyIdentifier="EUR"><%=
         number_with_comma taxes.values.first %></VatRateAmount>
-      <VatFreeText>VatFreeText</VatFreeText>
+      <VatFreeText></VatFreeText>
     </VatSpecificationDetails>
-    <InvoiceFreeText>InvoiceFreeText</InvoiceFreeText>
+    <InvoiceFreeText><%=@order.message%></InvoiceFreeText>
     <PaymentTermsDetails>
       <PaymentTermsFreeText>14 vrk netto</PaymentTermsFreeText>
       <FreeText>
@@ -128,7 +128,7 @@
       </EpiBeneficiaryPartyDetails>
     </EpiPartyDetails>
     <EpiPaymentInstructionDetails>
-      <EpiRemittanceInfoIdentifier IdentificationSchemeName="SPY">91901000011</EpiRemittanceInfoIdentifier>
+      <EpiRemittanceInfoIdentifier IdentificationSchemeName="SPY"><%@order.viite%></EpiRemittanceInfoIdentifier>
       <EpiInstructedAmount AmountCurrencyIdentifier="EUR"><%=
         number_with_comma @order.total_price %></EpiInstructedAmount>
       <EpiCharge ChargeOption="SHA">SHA</EpiCharge>
