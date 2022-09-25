@@ -128,7 +128,7 @@
       </EpiBeneficiaryPartyDetails>
     </EpiPartyDetails>
     <EpiPaymentInstructionDetails>
-      <EpiRemittanceInfoIdentifier IdentificationSchemeName="SPY"><%@order.viite%></EpiRemittanceInfoIdentifier>
+      <EpiRemittanceInfoIdentifier IdentificationSchemeName="SPY"><%=@order.viite%></EpiRemittanceInfoIdentifier>
       <EpiInstructedAmount AmountCurrencyIdentifier="EUR"><%=
         number_with_comma @order.total_price %></EpiInstructedAmount>
       <EpiCharge ChargeOption="SHA">SHA</EpiCharge>
