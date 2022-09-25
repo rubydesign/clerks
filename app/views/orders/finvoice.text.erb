@@ -8,7 +8,7 @@
     </MessageSenderDetails>
     <MessageReceiverDetails>
       <ToIdentifier SchemeID="0037">0037<%=@order.vat_id %></ToIdentifier>
-      <ToIntermediator>0037<%=@order.cid%></ToIntermediator>
+      <ToIntermediator><%=@order.cid%></ToIntermediator>
     </MessageReceiverDetails>
     <MessageDetails>
       <MessageIdentifier><%= @order.number %></MessageIdentifier>
@@ -64,7 +64,7 @@
     <InvoiceTypeText>LASKU</InvoiceTypeText>
     <OriginCode>Original</OriginCode>
     <InvoiceNumber><%= @order.number %></InvoiceNumber>
-    <InvoiceDate Format="CCYYMMDD"><%= @order.ordered_on.strftime("%Y%m%d")%></InvoiceDate>
+    <InvoiceDate Format="CCYYMMDD"><%=@order.shipped_on.strftime("%Y%m%d")%></InvoiceDate>
     <OrderIdentifier><%= @order.order_number %></OrderIdentifier>
     <InvoiceTotalVatExcludedAmount AmountCurrencyIdentifier="EUR"><%=
       number_with_comma(@order.total_price - @order.total_tax) %></InvoiceTotalVatExcludedAmount>
@@ -89,7 +89,7 @@
         <Value>Value</Value>
       </FreeText>
       <InvoiceDueDate Format="CCYYMMDD"><%=
-        (@order.ordered_on + 2.weeks).strftime("%Y%m%d") %></InvoiceDueDate>
+        (@order.shipped_on + 2.weeks).strftime("%Y%m%d") %></InvoiceDueDate>
     </PaymentTermsDetails>
     <TenderReference>TenderReference</TenderReference>
   </InvoiceDetails>
@@ -113,7 +113,7 @@
   <% end %>
   <EpiDetails>
     <EpiIdentificationDetails>
-      <EpiDate Format="CCYYMMDD"><%= @order.ordered_on.strftime("%Y%m%d")%></EpiDate>
+      <EpiDate Format="CCYYMMDD"><%=Time.now.strftime("%Y%m%d")%></EpiDate>
       <EpiReference/>
     </EpiIdentificationDetails>
     <EpiPartyDetails>
