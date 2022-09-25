@@ -37,7 +37,7 @@ fi:
         shipped_on: Lähetetty
         street: Jakeluosoite
         total: Yhteensä
-        vat: Alv-tunnus
+        vat_id: Alv-tunnus
         cid: Välittäjätunnus
       product:
         category: Tuoteryhmä
