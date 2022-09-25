@@ -37,6 +37,8 @@ fi:
         shipped_on: Lähetetty
         street: Jakeluosoite
         total: Yhteensä
+        vat: Alv-tunnus
+        cid: Välittäjätunnus
       product:
         category: Tuoteryhmä
         cost: Kustannus
@@ -234,7 +236,7 @@ fi:
   phone: Puhelin
   street: Jakeluosoite
   vat_id: Alv nummero
-  cid: Verkkoosoite
+  cid: Välittäjätunnus
   price: Hinta sis alv / alv 0
   house: Talo
   houses: Talot
