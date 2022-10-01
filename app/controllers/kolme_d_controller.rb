@@ -10,9 +10,24 @@ class KolmeDController < ApplicationController
     id = params[:id]
     @template = "kolme_d/#{id}"
     set_lamp_data if all_shades.include?(id.to_sym)
+    set_wave_data if id.to_sym == :wave
   end
+  def set_wave_data
+    @data = {  radius_min:   20 ,
+       radius_max: 130 ,
+       waves: 5 ,
+       sin_scale: 2 ,
+       offset:  13 ,
+       slope:  1.4,
+       height:   120 ,
+       heightSegments: 60,
+       radialSegments: 30,
+     }
+  end
+
   def set_lamp_data
     @template = "kolme_d/shade"
+    #checked before that it is valid to call
     send( params[:id] )
     @header , @text = send( "#{params[:id]}_text" )
   end
