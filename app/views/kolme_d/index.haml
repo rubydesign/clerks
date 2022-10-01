@@ -11,6 +11,7 @@
 .row
   - all_shades.each do |shade|
     - next if shade == :shade
+    - next if shade == :basic_shade
     - texts = send(:"#{shade}_text")
     .tripple
       %h2=texts.first
@@ -26,3 +27,11 @@
     .half
       = link_to kolme_d_url(:numbers) do
         =image_tag "3d/numbers.png" , class: :full
+  .tripple
+    %h2 A wavy cover
+    .half
+      Covering up old holes in a nice way. Had to add a suprising amount
+      of parameters to get the shape looking the way i wanted
+    .half
+      = link_to kolme_d_url(:cover) do
+        =image_tag "3d/cover.png" , class: :full

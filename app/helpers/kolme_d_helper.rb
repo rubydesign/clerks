@@ -1,14 +1,7 @@
 module KolmeDHelper
   def all_shades
-    [:basic_shade , :twisted_shade , :curved_shade , :pair_shade,
+    [ :twisted_shade , :curved_shade , :pair_shade,
       :bell_shade , :shade]
-  end
-  def basic_shade_text
-    ["Simple lamp" ,
-    "  This is a basic cylinder geometry, copied fromm threejs.
-      One can get surprisingly far by using the sliders.
-      HeightSegments will only later become obvious.
-    "]
   end
   def twisted_shade_text
     [ "Twisted lamp",

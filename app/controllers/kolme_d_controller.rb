@@ -10,18 +10,18 @@ class KolmeDController < ApplicationController
     id = params[:id]
     @template = "kolme_d/#{id}"
     set_lamp_data if all_shades.include?(id.to_sym)
-    set_wave_data if id.to_sym == :wave
+    set_cover_data if id.to_sym == :cover
   end
-  def set_wave_data
+  def set_cover_data
     @data = {  radius_min:   20 ,
        radius_max: 130 ,
        waves: 5 ,
-       sin_scale: 2 ,
-       offset:  13 ,
-       slope:  1.4,
+       sin_scale: 3 ,
+       offset:  20 ,
+       slope:  2,
        height:   120 ,
-       heightSegments: 60,
-       radialSegments: 30,
+       heightSegments: 100,
+       radialSegments: 60,
      }
   end
 
@@ -37,14 +37,6 @@ class KolmeDController < ApplicationController
       next unless val = params[key]
       @data[key] = val.to_f
     end
-  end
-  def basic_shade
-    @data = {  radius0:   20 ,
-       radius100: 130 ,
-       height:   180 ,
-       radialSegments: 24,
-       heightSegments: 18,
-     }
   end
   def twisted_shade
     @data = {  radius0:   20 ,

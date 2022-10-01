@@ -14,9 +14,9 @@
     #info
       %range-slider{"v-model":"radius_min" , ":min":"5", ":max":"50" ,
                     ":step": "1"} Radius hole {{radius_min}}
-      %range-slider{"v-model":"radius_max" , ":min":"100", ":max":"250" ,
+      %range-slider{"v-model":"radius_max" , ":min":"100", ":max":"240" ,
                   ":step": "1"} Radius total {{radius_max}}
-      %range-slider{"v-model":"height" , ":min":"1", ":max":"1000" ,
+      %range-slider{"v-model":"height" , ":min":"1", ":max":"400" ,
                     ":step": "1"} Lamp height {{height}}
 
       %range-slider{"v-model":"waves" , ":min":"1", ":max":"20" ,
@@ -84,6 +84,9 @@
      {"_data": { handler:  lambda{refreshMesh()}  , deep: true}}
     end
   end
+  def export_stl2
+    export_stl(true)
+  end
 
   refreshMesh()
-  document.getElementById( 'exportBinary' ).addEventListener( 'click', export_stl );
+  document.getElementById( 'exportBinary' ).addEventListener( 'click', export_stl2 );
