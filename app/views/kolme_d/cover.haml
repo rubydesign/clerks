@@ -45,17 +45,21 @@
   end
   def wave_transform(simple)
       data = Simple._data;
+      current_scale = 0
       simple.vertices.each do |vertex|
         dist = vertex.x * vertex.x + vertex.y * vertex.y
         cos =  Math.cos( (Math.PI * dist * data.waves) / (data.radius_max * data.radius_max) )
         cos = 1 + (cos / data.sin_scale)
-        console.log "dist   " + Math.sqrt(dist)
         dist = Math.sqrt(dist)
-        console.log " cos    " + cos
-        cos = cos
         scale = data.height * cos * data.offset / (data.offset*data.slope + (dist))
-        console.log " scale " + scale
-        vertex.z = scale
+        if(Math.abs(scale - current_scale) > 0.001 )
+          current_scale = scale
+          console.log " updating"
+          console.log " cos    " + cos
+          console.log "dist   " + Math.sqrt(dist)
+          console.log " scale " + current_scale
+        end
+        vertex.z = current_scale
       end
   end
 
