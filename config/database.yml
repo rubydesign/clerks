@@ -8,13 +8,20 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: devel
+  database: devel_rubydesign
   pool: 5
   username: postgres
 
 test:
   adapter: postgresql
   encoding: unicode
-  database: test
+  database: test_rubydesign
+  pool: 5
+  username: postgres
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: rubydesign
   pool: 5
   username: postgres

@@ -49,6 +49,7 @@ Laptop:
 rbenv local 2.7.6 or better still working .ruby-version
 bundle exec mina setup
 scp villataika/config/master.key feenix@192.168.129.10:villataika/shared/config/
+bundle exec mina deploy
 - for db, log in run db:create, migrate or whatever and deploy again
 
 AS root
