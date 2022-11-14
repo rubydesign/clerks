@@ -8,7 +8,6 @@
 *.sqlite3-journal
 /log/*
 /tmp/*
-.ruby-version
 test_app/tmp
 test_app/log
 
