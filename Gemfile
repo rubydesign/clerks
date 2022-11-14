@@ -40,7 +40,6 @@ gem "rb-readline"
 gem 'uglifier', '>= 1.3.0'
 
 gem "autoprefixer-rails"
-gem "puma"
 gem "neat"
 gem 'rack-attack'
 gem 'binding_of_caller'
@@ -51,12 +50,15 @@ gem 'binding_of_caller'
 group :production do
   gem 'mini_racer'
   gem "pg"
+  gem "passenger", ">= 6.0", require: "phusion_passenger/rack_handler"
 end
 
 group :development do
+  gem "puma"
   gem 'better_errors'
   gem "i18n-tasks"
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem "mina"
 end
 group :test do
   gem 'rspec-rails'
