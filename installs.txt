@@ -3,7 +3,7 @@ sudo dnf install -y emacs-nox tilix  pinta wireshark
 sudo dnf install -y dnf-plugins-core sqlite-devel
 sudo yum group install "Development Tools"
 sudo dnf install -y redhat-rpm-config gcc-c++ libpq-devel
-sudo yum install -y gcc zlib-devel
+sudo yum install -y gcc zlib-devel perl-FindBin
 sudo dnf install -y postgresql-server postgresql
 sudo dnf install -y emacs-nox evolution
 

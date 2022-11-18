@@ -13,5 +13,6 @@ cd rubydesign
 gem install bundler
 bundle
 bundle exec rails db:create
+heroku pg:backups:capture
 heroku pg:backups:download
 pg_restore --verbose --clean --no-acl --no-owner -U postgres -d devel latest.dump

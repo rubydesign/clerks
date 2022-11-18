@@ -28,6 +28,7 @@ gem 'pry-rails'
 gem 'e2mmap'
 gem "sorted_set"
 gem 'rails_same_site_cookie'
+gem "skylight"
 
 group :lomake do
   gem "hexapdf"
