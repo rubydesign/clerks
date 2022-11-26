@@ -42,7 +42,7 @@ config:
   invoice_logo_path: "invoice_logo.jpg"
   footer_left2: IBAN FI1017 4530 0013 2474<br/>BIC NDEAFIHH (Nordea)
   shop: Auringosta Itään, Kuusta Länteen
-  shop_address: Fiskarsintie 847, 10480 Antskog
+  shop_address: Högbenintie 30, 10350 Meltola
   footer_left: Auringosta Itään, Kuusta Länteen Tukku
   footer_left2: "IBAN FI1017 4530 0013 2474 <br>
     BIC NDEAFIHH (Nordea) <br>
@@ -51,8 +51,8 @@ config:
     Lightning Raisa & Torsten Oy <br>
     Y-Tunnus 2380478-1 <br>
     Viivästyskorko 12 %"
-  footer_right: "Fiskarsintie 847 <br>
-    10480 Antskog <br>
+  footer_right: "Högbenintie 30 <br>
+    10350 Meltola <br>
     info@farfalla.fi <br>
     puh 040 146 1222"
   print_styles: "slip invoice reminder rakennus ecoframe"
