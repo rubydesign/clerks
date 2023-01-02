@@ -15,6 +15,8 @@ alias st="git status "
 alias pu="git push "
 alias di="git diff "
 alias m="atom"
+alias v='function _blah(){ atom app/views/$1; };_blah'
+
 alias pi="ssh -p 2222 -l pi localhost"
 alias zero="ssh pi@zero.local"
 alias deploy="git push heroku master"

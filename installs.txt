@@ -34,3 +34,5 @@ sudo service postgresql restart
 
 systemctl --user enable --now syncthing.service
 systemctl --user start --now syncthing.service
+
+# tilix regex for clicks (^|\s|:)((\/[a-zA-Z0-9_\-\.]+|[a-zA-Z0-9_\-\.]+)(?:\/[a-zA-Z0-9_-]+)*(\.[a-zA-Z0-9_\-\.]+)(:([0-9]+)(:[0-9]+)?)?)
