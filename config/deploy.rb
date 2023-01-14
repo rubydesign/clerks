@@ -10,8 +10,8 @@ require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
 
 set :application_name, 'rubydesign'
 set :domain, '192.168.129.10'
-set :deploy_to, '/home/feenix/rubydesign'
-set :repository, "https://github.com/rubydesign/rubydesign.git"
+set :deploy_to, '/home/feenix/clerks'
+set :repository, "https://github.com/rubydesign/clerks.git"
 set :branch, 'master'
 
 # Optional settings:
@@ -52,7 +52,6 @@ task :deploy do
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
-    invoke :'rails:db_migrate'
     invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
 

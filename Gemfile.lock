@@ -186,7 +186,7 @@ GEM
       rexml
     launchy (2.4.3)
       addressable (~> 2.3)
-    libv8 (6.7.288.46.1)
+    libv8-node (16.10.0.0)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -206,8 +206,8 @@ GEM
       rake
     mini_mime (1.0.1)
     mini_portile2 (2.8.0)
-    mini_racer (0.2.4)
-      libv8 (>= 6.3)
+    mini_racer (0.6.3)
+      libv8-node (~> 16.10.0.0)
     minitest (5.16.3)
     multi_xml (0.6.0)
     neat (3.0.1)

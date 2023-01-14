@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'high_voltage/pages#show' , id: 'index'
-
-  get "/blog" , to: "blog#index" , as: :blog_index
-  get "/blog/*title" , to: "blog#post" , as: :blog_post
+  root to: 'sessions#sign_in' , id: 'index'
 
   get "sign_out" => "sessions#sign_out"
   get "sign_in"  => "sessions#sign_in"
