@@ -8,11 +8,11 @@ require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
-set :application_name, 'rubydesign'
+set :application_name, 'clerks'
 set :domain, '192.168.129.10'
 set :deploy_to, '/home/feenix/clerks'
 set :repository, "https://github.com/rubydesign/clerks.git"
-set :branch, 'master'
+set :branch, 'main'
 
 # Optional settings:
 set :user, 'feenix'          # Username in the server to SSH to.

@@ -49,7 +49,7 @@ gem 'binding_of_caller'
 
 
 group :production do
-  gem 'mini_racer'
+  gem 'duktape'
   gem "pg"
   gem "passenger", ">= 6.0", require: "phusion_passenger/rack_handler"
 end
