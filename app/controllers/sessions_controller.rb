@@ -27,15 +27,6 @@ class SessionsController < ApplicationController
       @clerk = Clerk.new
     else
       redirect_to sign_in_url , :notice => "No sign ups"
-      begin
-        @clerk = Clerk.new(params_for_clerk)
-        if @clerk.save
-          session[:clerk_email] = @clerk.email
-          return redirect_after_sign_up
-        end
-      rescue #this is just needed for hackers, so we don't get rollbar events
-        @clerk = Clerk.new
-      end
     end
   end
 
