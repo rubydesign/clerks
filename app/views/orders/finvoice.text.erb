@@ -7,8 +7,8 @@
       <FromIntermediator>MAVENTA</FromIntermediator>
     </MessageSenderDetails>
     <MessageReceiverDetails>
-      <ToIdentifier SchemeID="0037">0037<%=@order.vat_id %></ToIdentifier>
-      <ToIntermediator><%=@order.cid%></ToIntermediator>
+      <ToIdentifier SchemeID="0037">0037<%=@order.vatid %></ToIdentifier>
+      <ToIntermediator><%=@order.c_id%></ToIntermediator>
     </MessageReceiverDetails>
     <MessageDetails>
       <MessageIdentifier><%= @order.number %></MessageIdentifier>
@@ -43,10 +43,10 @@
     <InvoiceRecipientEmailaddressIdentifier><%= @order.email %></InvoiceRecipientEmailaddressIdentifier>
   </InvoiceRecipientCommunicationDetails>
   <BuyerPartyDetails>
-    <BuyerPartyIdentifier><%=@order.vat_id %></BuyerPartyIdentifier>
+    <BuyerPartyIdentifier><%=@order.vatid %></BuyerPartyIdentifier>
     <BuyerOrganisationName><%= @order.name %></BuyerOrganisationName>
     <BuyerOrganisationTradingName><%=@order.name %></BuyerOrganisationTradingName>
-    <BuyerOrganisationTaxCode><%=@order.vat_id %></BuyerOrganisationTaxCode>
+    <BuyerOrganisationTaxCode><%=@order.vatid %></BuyerOrganisationTaxCode>
     <BuyerPostalAddressDetails>
       <BuyerStreetName><%= @order.street %></BuyerStreetName>
       <BuyerTownName><%= @order.city.split.last %></BuyerTownName>

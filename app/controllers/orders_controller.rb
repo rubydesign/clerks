@@ -103,6 +103,6 @@ class OrdersController < AdminController
   def params_for_order
     params.require(:order).permit(:payment_info,:note , :message,
                       :shipment_info,:shipment_price,:shipment_tax,:shipment_type,
-                      :name ,:street, :city , :phone , :email , :vat_id , :cid)
+                      :name ,:street, :city , :phone , :email , :vatid , :c_id)
   end
 end

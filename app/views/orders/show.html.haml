@@ -30,6 +30,9 @@
             = link_to @order.email.to_s , search_orders_path( :"q[email_cont]" => @order.email )
             %br
             = @order.phone.to_s
+            %br
+              = @order.c_id
+              = @order.vatid
 
           %td
             %b

@@ -80,6 +80,13 @@
         .col-md-4
           = f.search_field :ordered_on_lteq , :class => "form-control datepicker" , :value => sort_date(:ordered_on_lteq)
       .form-group.row
+        .col-md-3
+          = f.label(:c_id)
+        .col-sm-1.radio.radio-form
+          = f.radio_button :c_id_present , true
+        .col-md-4
+          = f.text_field(:vatid_cont , :class => "form-control" , :placeholder => t(:vatid))
+      .form-group.row
         .col-md-2
           = f.label(:paid_on)
         .col-sm-1.radio.radio-form
