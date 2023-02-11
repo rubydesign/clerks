@@ -65,11 +65,12 @@ class Order < ActiveRecord::Base
     cart
   end
 
-  def pay_now
-    self.paid_on = Date.today
+  def pay_now( minus = 0 )
+    self.paid_on = Date.today - minus.day
   end
-  def ship_now
-    self.shipped_on = Date.today
+
+  def ship_now(minus = 0)
+    self.shipped_on = Date.today - minus.day
   end
 
   # go back to edit mode, but return inventiry and zero shipped

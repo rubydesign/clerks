@@ -32,21 +32,23 @@ class OrdersController < AdminController
   end
 
   def pay
-    @order.pay_now
+    minus = (params[:minus] || "").to_i
+    @order.pay_now(minus)
     @order.save
-    return redirect_to orders_path , :notice => t(:update_success) + ":#{@order.number}"
+    return redirect_to order_path(@order) , :notice => t(:update_success) + ":#{@order.number}"
   end
 
-  def deduct_only
-    @order.ship_now
+  def deduct_only(minus = 0)
+    @order.ship_now(minus)
     @order.basket.deduct!
     @order.save!
     return redirect_to order_path(@order), :notice => t(:update_success)
   end
 
   def ship
+    minus = (params[:minus] || "").to_i
     @order.generate_order_number
-    return deduct_only
+    return deduct_only(minus)
   end
 
   # after many user mistakes we now let the user undo those, cancel to go back to edit
